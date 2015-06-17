@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  title: Swagger Example
+  version: 0.1.0
+paths:
+  /examples/{fooID}/{barName}/{bazID}:
+     get:
+      parameters:
+        - name: fooID
+          in: path
+          description: description
+          type: string
+
+        - name: barName
+          in: path
+          description: description
+          type: string
+
+        - name: bazID
+          in: path
+          description: description
+          type: string
+
+      tags:
+       - example
+      responses:
+
+        200:
+
+          description: OKAY
+          schema:
+            $ref: '#/definitions/exampleType'
+        400:
+          description: NOPE
+          schema:
+            $ref: '#/definitions/exampleType'
+        x-unique:
+          [200,400]
+
+definitions:
+  exampleType:
+    properties:
+      name:
+        type: string
+      birthday:
+        type: integer
+        format: int32
