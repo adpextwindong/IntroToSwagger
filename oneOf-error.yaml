@@ -1,0 +1,14 @@
+swagger: '2.0'
+info:
+  title: Swagger Example
+  version: 0.1.0
+
+paths:
+  /examples:
+     get:
+      tags:
+       - example
+      responses:
+        200:
+          description: OKAY
+          key: pair
